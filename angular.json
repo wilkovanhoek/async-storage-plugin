@@ -11,16 +11,16 @@
       "prefix": "async-storage-plugin",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "tsconfig.lib.json",
             "project": "src/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "src/ng-package.prod.json"
-            ,              "tsConfig": "tsconfig.lib.prod.json"
-}
+              "project": "src/ng-package.prod.json",
+              "tsConfig": "tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -34,13 +34,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "tsconfig.lib.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["tsconfig.lib.json", "src/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -133,9 +128,7 @@
             "polyfills": "integration/polyfills.ts",
             "tsConfig": "integration/tsconfig.spec.json",
             "karmaConfig": "integration/karma.conf.js",
-            "styles": [
-              "integration/global.scss"
-            ],
+            "styles": ["integration/global.scss"],
             "scripts": [],
             "assets": [
               {
@@ -158,9 +151,7 @@
               "integration/tsconfig.app.json",
               "integration/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "ionic-cordova-build": {
